@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 import { 
   X, 
   Terminal, 
-  Copy, 
-  Check, 
-  FolderGit2, 
   Layers, 
   Cpu, 
   CheckCircle2, 
@@ -21,8 +18,7 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'architecture' | 'tech' | 'run'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'architecture' | 'tech'>('overview');
 
   // Close on Escape key
   useEffect(() => {
@@ -40,13 +36,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   }, [project, onClose]);
 
   if (!project) return null;
-
-  const copyRunCommand = () => {
-    const fullCommand = `cd "c:\\Users\\LENOVO\\Documents\\${project.localDir}"; ${project.runCommand}`;
-    navigator.clipboard.writeText(fullCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
@@ -88,11 +77,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </button>
           </div>
 
-          {/* Local Folder Path & External Links Banner */}
+          {/* Live Action Bar */}
           <div className="relative z-10 mt-4 pt-3 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-white/80">
             <div className="flex items-center gap-2">
-              <FolderGit2 className="w-4 h-4 text-white/90" />
-              <span>Location: <strong className="text-white font-semibold">Documents/{project.localDir}</strong></span>
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-emerald-300 font-semibold">Live Production Deployment</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -101,7 +93,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-slate-950 hover:bg-cyan-300 font-bold text-xs shadow-lg transition-all"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white text-slate-950 hover:bg-cyan-300 font-bold text-xs shadow-lg transition-all"
                   title="Open live on Vercel / Web"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -114,21 +106,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-xs transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-xs transition-colors"
                   title="View Source on GitHub"
                 >
                   <Github className="w-3.5 h-3.5" />
-                  <span>GitHub</span>
+                  <span>GitHub Repository</span>
                 </a>
               )}
-
-              <button
-                onClick={copyRunCommand}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 hover:bg-black/60 border border-white/20 text-white transition-colors"
-              >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copied ? 'Copied!' : 'Copy Command'}</span>
-              </button>
             </div>
           </div>
         </div>
@@ -164,16 +148,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             }`}
           >
             Tech Stack Deep Dive
-          </button>
-          <button
-            onClick={() => setActiveTab('run')}
-            className={`px-4 py-3 border-b-2 transition-colors whitespace-nowrap ${
-              activeTab === 'run'
-                ? 'border-cyan-400 text-cyan-400 font-semibold'
-                : 'border-transparent text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            Run Locally
           </button>
         </div>
 
@@ -316,56 +290,31 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           )}
 
-          {/* TAB 4: RUN LOCALLY */}
-          {activeTab === 'run' && (
-            <div className="space-y-5">
-              <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <Terminal className="w-4 h-4 text-cyan-400" />
-                  <span>Execute App Locally in PowerShell / Terminal</span>
-                </h4>
-                <p className="text-xs text-slate-400">
-                  You can launch this application directly on this machine with the following command:
-                </p>
-
-                <div className="relative group">
-                  <pre className="p-4 rounded-lg bg-black/70 border border-slate-800 text-cyan-300 font-mono text-xs sm:text-sm overflow-x-auto whitespace-pre-wrap select-all">
-                    cd "c:\Users\LENOVO\Documents\{project.localDir}"; {project.runCommand}
-                  </pre>
-                  <button
-                    onClick={copyRunCommand}
-                    className="absolute top-2.5 right-2.5 px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-sans flex items-center gap-1.5 transition-colors"
-                  >
-                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{copied ? 'Copied' : 'Copy'}</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="text-xs text-slate-400 space-y-2">
-                <div className="font-semibold text-slate-300">Run Notes:</div>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Folder path: <code className="text-cyan-300">c:\Users\LENOVO\Documents\{project.localDir}</code></li>
-                  <li>Prerequisites: Node.js, npm, or relevant engine (Godot for game projects).</li>
-                  <li>To launch Next.js / Vite apps, execute <code className="text-cyan-300">npm run dev</code> or <code className="text-cyan-300">npm.cmd run dev</code>.</li>
-                </ul>
-              </div>
-            </div>
-          )}
-
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 sm:px-8 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between">
+        <div className="p-4 sm:px-8 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between gap-4">
           <div className="text-xs text-slate-400 font-mono">
-            App {project.id} • Built by Dan Lanre
+            {project.title} • Built by Dan Lanre
           </div>
-          <button
-            onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors"
-          >
-            Close
-          </button>
+          <div className="flex items-center gap-2">
+            {project.links?.demo && (
+              <a
+                href={project.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-bold shadow-md shadow-cyan-500/20 transition-all flex items-center gap-1.5"
+              >
+                <span>Launch App ↗</span>
+              </a>
+            )}
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors"
+            >
+              Close
+            </button>
+          </div>
         </div>
 
       </div>

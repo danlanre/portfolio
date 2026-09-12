@@ -28,6 +28,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Music,
   Subtitles,
   Gamepad2,
+  Sparkles,
 };
 
 interface ProjectCardProps {

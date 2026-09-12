@@ -321,175 +321,142 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: 'passportpro',
-    title: 'PassPortPro Studio',
-    subtitle: 'AI Passport Photo Suite & In-Browser Photoshop Retouch Suite',
-    category: 'tools-games',
-    categoryLabel: 'Computer Vision & Tools',
-    status: 'Live System',
-    featured: false,
-    shortDescription: 'High-performance in-browser photo studio with biometric alignment guides, Photoshop-grade retouching brushes (Spot Healing, Clone Stamp, Dodge & Burn, Skin Smoothing), and formal suit wardrobe overlay.',
-    fullDescription: 'PassPortPro is an advanced web-based graphic editor built purely with HTML5 Canvas and vanilla JavaScript for maximum speed and zero dependencies. Designed for ID card and international passport compliance, it provides real-time head/chin biometric alignment overlays, pixel-manipulation retouching tools (Spot Healing with surrounding patch synthesis, Clone Stamp, Dodge & Burn, Skin Softener), tone curves, and an instant formal attire wardrobe switcher.',
-    problem: 'Professional passport photo studios and standalone graphic software are expensive, require manual desktop installation, and often lack country-specific biometric validation guidelines (ICAO / US / UK / Schengen).',
-    solution: 'Built a lightweight, zero-latency browser studio with instant canvas pixel processing algorithms that run entirely client-side with complete privacy and zero image upload to servers.',
-    architectureHighlights: [
-      'Raw Canvas 2D Pixel Manipulation: Custom written algorithms for spatial patch blending (Spot Healing) and frequency-domain skin smoothing',
-      'Interactive Biometric Overlay: Strict ICAO/ISO 19794-5 guidelines with eye-line, crown-to-chin proportions, and background contrast checks',
-      'Wardrobe Transformer: Layered matrix transformation allowing users to drag, resize, and match formal suits and blazers onto portrait photos',
-      'Print Sheet Layout Engine: Generates print-ready 4x6 inch and A4 photo sheets formatted with multiple passport cutouts'
-    ],
-    keyFeatures: [
-      'Pixel-level Spot Healing & Clone Stamp Brushes',
-      'Dodge, Burn & Frequency Separation Skin Smoothing',
-      'Standard Biometric Head & Eye Alignment Guides',
-      'Formal Suit & Attire Wardrobe Overlay Suite',
-      'RGB Curves, Levels & Contrast Retouching',
-      'One-click 4x6 Print Sheet Multi-cutout Export'
-    ],
-    techStack: [
-      { name: 'HTML5 Canvas API', role: 'Real-time High-FPS Pixel Manipulation' },
-      { name: 'Vanilla JavaScript', role: 'Zero-Dependency High Performance' },
-      { name: 'Modular CSS3', role: 'Photoshop-style Studio UI' }
-    ],
-    primaryColor: 'from-sky-500 via-blue-600 to-indigo-700',
-    accentColor: 'text-sky-400',
-    iconName: 'Camera',
-    localDir: 'photo',
-    runCommand: 'Open photo/index.html in your browser',
-    metrics: [
-      { label: 'Client Processing', value: '100% On-Device' },
-      { label: 'Image Privacy', value: 'Zero Server Upload' },
-      { label: 'Standards Supported', value: 'ICAO / US / Schengen' }
-    ]
-  },
-  {
-    id: 'soundvibe',
-    title: 'SoundVibe & SmartDJ',
-    subtitle: 'AI Music Discovery, Waveform Streaming & Community Platform',
-    category: 'fullstack',
-    categoryLabel: 'Audio & Streaming',
-    status: 'Prototype',
-    featured: false,
-    shortDescription: 'Modern music streaming and social audio discovery application featuring an interactive waveform player, track matchmaker, and an embedded Smart DJ conversational assistant.',
-    fullDescription: 'SoundVibe combines high-fidelity music streaming with interactive social discovery and artificial intelligence. Listeners can upload original tracks, visualize dynamic audio waveforms, explore new genres using the Smart DJ conversational AI chatbot, and find kindred music producers through an automated sonic matchmaker algorithm.',
-    problem: 'Independent music creators struggle to get discovered on saturated legacy platforms that prioritize algorithmic major-label playlists over community connection and intelligent curation.',
-    solution: 'Constructed an open audio ecosystem with an integrated Smart DJ AI, dynamic audio streaming engine, and community matchmaking tools.',
-    architectureHighlights: [
-      'Custom Audio Player Hook: Built-in state management for buffering, scrubbing, volume control, track queuing, and continuous playback',
-      'Smart DJ AI Assistant: Conversational agent that parses listener mood, genre preferences, and recommends tailored track transitions',
-      'Track Matchmaker: Compares acoustic metadata, BPM, and tags to connect producers and vocalists for collaborative remixing'
-    ],
-    keyFeatures: [
-      'Interactive Waveform Playback & Scrubbing Controller',
-      'Smart DJ AI Conversational Chat Assistant',
-      'Track Matchmaker for Producer-Vocalist Collaboration',
-      'Multi-genre Catalog with Instant Tag Filtering',
-      'Creator Audio Upload & Metadata Tagging Modal'
-    ],
-    techStack: [
-      { name: 'React 18', role: 'Audio Player State & Frontend' },
-      { name: 'Node.js & Express', role: 'Audio Streaming Backend' },
-      { name: 'Tailwind CSS', role: 'Dark Neon Audio Interface' },
-      { name: 'Lucide Icons', role: 'Audio & Playback Controls' }
-    ],
-    primaryColor: 'from-pink-500 via-rose-600 to-purple-600',
-    accentColor: 'text-pink-400',
-    iconName: 'Music',
-    localDir: 'audio/frontend',
-    runCommand: 'npm run dev',
-    metrics: [
-      { label: 'Audio Latency', value: '<50ms' },
-      { label: 'Audio Formats', value: 'MP3, WAV, FLAC' },
-      { label: 'AI Assistance', value: 'Smart DJ Chat' }
-    ]
-  },
-  {
-    id: 'subflow',
-    title: 'SubFlow Studio',
-    subtitle: 'AI Audio-to-Video Subtitle Sync & Captioning Platform',
+    id: 'ai-content-engine',
+    title: 'AI Content & Marketing Copy Engine',
+    subtitle: 'Autonomous Multivariant Copy & Social Media Generation Platform',
     category: 'ai',
-    categoryLabel: 'Video & Audio AI',
-    status: 'Prototype',
-    featured: false,
-    shortDescription: 'Precision subtitle and caption generator that transcribes speech from videos, generates synchronized SRT/VTT timelines, and renders live animated caption overlays.',
-    fullDescription: 'SubFlow Studio simplifies video accessibility and content repurposing. Creators upload raw video or audio files, which are processed through automated speech-to-text models to generate timestamped cues. Creators can visually scrub through the timeline, fine-tune subtitle durations down to milliseconds, customize font stylings, and burn subtitles directly into video exports.',
-    problem: 'Creating accurate, frame-perfect subtitles for video content is tedious and manual, while most automated tools output out-of-sync or uneditable closed captions.',
-    solution: 'Engineered an interactive timeline editor paired with speech recognition APIs and Web Audio timeline scrubbers for instant subtitle editing and export.',
+    categoryLabel: 'AI & Automation',
+    status: 'Production',
+    featured: true,
+    shortDescription: 'Generative AI platform that produces high-converting marketing copy, social media campaign calendars, and multi-tone brand assets using Google Gemini and Next.js 14.',
+    fullDescription: 'AI Content Engine accelerates content production workflows for marketing agencies and startups. Users generate tailored copy across 10+ formats (LinkedIn posts, Twitter threads, email newsletters, SEO landing pages) with instant tone matching, multi-variant testing, and real-time markdown export.',
+    problem: 'Marketing teams waste hours drafting repetitive social copy and struggle to maintain consistent brand voice across multiple digital platforms.',
+    solution: 'Engineered a prompt-chained generation pipeline with structured temperature presets, dynamic token streaming, and one-click clipboard formatting.',
     architectureHighlights: [
-      'Web Audio Synchronization: Connects video timecode updates directly with subtitle text highlighting at 60 FPS',
-      'Universal Format Export: Generates compliant SRT, WebVTT, and JSON caption data with millisecond timestamps',
-      'Kinetic Caption Styling: Offers preset animated subtitle themes (MrBeast-style, minimalist cinema, high-contrast karaoke)'
+      'Streaming Generation: Server-Sent Events (SSE) stream AI tokens in real-time with sub-200ms TTFB',
+      'Prompt Engineering Presets: Calibrated system instructions for tone, readability, and platform length constraints',
+      'Export Engine: One-click export to Markdown, HTML, and formatted clipboard buffers'
     ],
     keyFeatures: [
-      'Automated Speech-to-Text Transcription',
-      'Interactive Visual Waveform & Timeline Scrubber',
-      'Millisecond Precision Subtitle Cues Editing',
-      'Instant SRT and VTT File Export',
-      'Custom Video Overlay Font & Color Theming'
+      'Real-time AI Copy Generation with Token Streaming',
+      'Multi-platform Presets (LinkedIn, Twitter/X, Email, Blog)',
+      'Tone of Voice Customizer (Authoritative, Casual, Persuasive)',
+      'Instant Export to Markdown and Formatted HTML'
     ],
     techStack: [
-      { name: 'Next.js 14', role: 'Full-Stack Application Framework' },
-      { name: 'React 18', role: 'Interactive Timeline Components' },
-      { name: 'Web Audio API', role: 'Audio Analysis & Playback Sync' },
-      { name: 'Tailwind CSS', role: 'Studio Video Editor UI' }
+      { name: 'Next.js 14', role: 'App Router & Edge Functions' },
+      { name: 'Google Gemini Pro', role: 'Generative AI LLM' },
+      { name: 'Tailwind CSS', role: 'Modern Responsive Workspace' },
+      { name: 'TypeScript', role: 'Type-Safe Inference Schemas' }
     ],
-    primaryColor: 'from-amber-500 via-orange-600 to-red-600',
-    accentColor: 'text-amber-400',
-    iconName: 'Subtitles',
-    localDir: 'game/subtitle-app/client',
+    primaryColor: 'from-violet-600 via-purple-600 to-indigo-700',
+    accentColor: 'text-violet-400',
+    iconName: 'Sparkles',
+    localDir: 'developer',
     runCommand: 'npm run dev',
+    links: {
+      demo: 'https://ai-content-engine-bice.vercel.app/',
+      github: 'https://github.com/danlanre/ai-content-engine'
+    },
     metrics: [
-      { label: 'Accuracy', value: '98%+ Speech Sync' },
-      { label: 'Timing Precision', value: '1ms Granularity' },
-      { label: 'Formats', value: 'SRT, VTT, JSON' }
+      { label: 'Generation Speed', value: '<1.8s Response' },
+      { label: 'Copy Formats', value: '10+ Channels' },
+      { label: 'Framework', value: 'Next.js 14 Edge' }
     ]
   },
   {
-    id: 'survival-protocol',
-    title: 'Survival Protocol',
-    subtitle: 'Godot 4 3D/2D Action Survival Shooter',
-    category: 'tools-games',
-    categoryLabel: 'Game Development',
-    status: 'Prototype',
+    id: 'newman-school',
+    title: 'Newman International School Portal',
+    subtitle: 'Digital Academic Management, Student Admissions & Results Portal',
+    category: 'fullstack',
+    categoryLabel: 'EdTech & Systems',
+    status: 'Production',
     featured: false,
-    shortDescription: 'Top-down / 3D arena survival shooter built in Godot Engine featuring custom enemy AI pathfinding, finite state machines, dynamic ammo and flashlight battery economy mechanics.',
-    fullDescription: 'Survival Protocol is a high-octane survival game developed in Godot Engine 4. Players navigate an enclosed hostile facility in darkness, managing a rapidly depleting flashlight battery and limited ammunition while fending off swarming procedural enemy hordes driven by custom GDScript AI behavioral trees.',
-    problem: 'Creating compelling game feel and tense atmosphere requires tight physics coordination, responsive player controls, and intelligent enemy navigation without FPS dips.',
-    solution: 'Programmed clean GDScript modular components for entity health, dynamic pickup systems (batteries and ammo), raycast line-of-sight enemy targeting, and physics interpolation.',
+    shortDescription: 'Comprehensive school management and student portal providing online admissions processing, termly report sheet verification, and academic calendar scheduling.',
+    fullDescription: 'Newman International School Portal modernizes secondary school administration. Parents and students can verify termly report sheets with cryptographically signed result pins, register new students via structured intake forms, review academic curricula, and receive administrative announcements.',
+    problem: 'Paper-based student records and manual result compilation cause report tampering, registration delays, and administrative bottlenecks.',
+    solution: 'Designed a secure academic portal with pin-based result verification, digital admissions pipelines, and responsive mobile-first parent dashboards.',
     architectureHighlights: [
-      'GDScript Finite State Machines (FSM): Controls enemy states (Patrol, Alert, Chase, Attack, Flee) with clean modular code',
-      'Dynamic Inventory & Vitality Mechanics: Flashlight drain rate and reload timings calibrated for intense survival tension',
-      'Optimized 2D/3D Node Hierarchy: Node instancing and scene decoupling for seamless weapon and enemy spawning'
+      'Pin-Protected Verification: Prevents unauthorized grade tampering with single-use academic token validation',
+      'Automated GPA Calculation: Instant term score aggregation and cumulative position ranking',
+      'Mobile-First Layout: Optimized for parents checking reports on budget mobile devices'
     ],
     keyFeatures: [
-      'Custom GDScript Enemy AI with Pathfinding & Line-of-Sight Detection',
-      'Dynamic Resource Economy (Ammo Pickups & Battery Life Management)',
-      'Smooth Physics-based Kinematic Player Controller',
-      'Atmospheric 2D/3D Dynamic Lighting & Shadow Occlusion',
-      'Modular Wave Spawner & Score Progression System'
+      'Online Student Result Verification with Scratch-Card PINs',
+      'Digital Student Admission Intake & Document Upload',
+      'Termly Academic Calendar & Event Scheduler',
+      'Administrative Announcement & Notification Broadcast'
     ],
     techStack: [
-      { name: 'Godot 4.x Engine', role: 'Game Engine & Physics Simulation' },
-      { name: 'GDScript', role: 'Enemy AI, Pickups & Gameplay Mechanics' },
-      { name: 'Godot Shaders', role: 'Dynamic Lighting & Field of View' }
+      { name: 'Next.js 14', role: 'Full-Stack Web Architecture' },
+      { name: 'React 18', role: 'Interactive Academic UI' },
+      { name: 'Tailwind CSS', role: 'Clean Institutional Branding' },
+      { name: 'TypeScript', role: 'Strict Academic Data Typing' }
     ],
-    primaryColor: 'from-red-600 via-rose-700 to-zinc-900',
-    accentColor: 'text-red-400',
-    iconName: 'Gamepad2',
-    localDir: 'game',
-    runCommand: 'Open project.godot in Godot Engine 4',
+    primaryColor: 'from-blue-600 via-sky-600 to-teal-600',
+    accentColor: 'text-sky-400',
+    iconName: 'GraduationCap',
+    localDir: 'developer',
+    runCommand: 'npm run dev',
+    links: {
+      demo: 'https://newmaninternationalschool.vercel.app/',
+      github: 'https://github.com/danlanre/newmaninternationalschool'
+    },
     metrics: [
-      { label: 'Engine', value: 'Godot 4.x' },
-      { label: 'Frame Rate', value: 'Smooth 60 FPS' },
-      { label: 'AI System', value: 'FSM Behavioral Trees' }
+      { label: 'Verification', value: 'Instant PIN Auth' },
+      { label: 'Portal Speed', value: 'Sub-second Load' },
+      { label: 'Accessibility', value: 'Mobile-First' }
+    ]
+  },
+  {
+    id: 'queen-amina-college',
+    title: 'Queen Amina College Portal (Kaduna)',
+    subtitle: 'Institutional Web Portal & Academic Information Architecture',
+    category: 'fullstack',
+    categoryLabel: 'Institutional & EdTech',
+    status: 'Production',
+    featured: false,
+    shortDescription: 'Official web portal for Queen Amina College, Kaduna (Est. 2026), featuring academic program directories, administrative news bulletins, and prospective student admissions.',
+    fullDescription: 'Queen Amina College Portal serves as the primary digital gateway for Queen Amina College in Kaduna, Nigeria. Built with modern web standards, it showcases the college campus history, academic faculties, admission requirements, student life, and leadership directory.',
+    problem: 'Historic secondary institutions require clean, modern digital presence to communicate admissions timelines and faculty credentials clearly to prospective families.',
+    solution: 'Architected a fast, accessible institutional platform with structured information hierarchy, high-contrast typography, and low-data mobile performance.',
+    architectureHighlights: [
+      'Optimized Asset Delivery: Pre-rendered static pages with edge caching across Nigerian CDN points',
+      'Accessible Information Architecture: WCAG 2.1 AA compliant contrast and structured navigation',
+      'Admissions Intake Pipeline: Multi-step prospective student registration workflow'
+    ],
+    keyFeatures: [
+      'Institutional History & Campus Program Directory',
+      'Prospective Student Admission Requirements & Guide',
+      'Campus Leadership & Faculty Department Listings',
+      'Real-Time Academic News & Calendar Announcements'
+    ],
+    techStack: [
+      { name: 'Vite & React 18', role: 'High-Performance Frontend' },
+      { name: 'Tailwind CSS', role: 'Institutional Palette' },
+      { name: 'Lucide Icons', role: 'Academic Iconography' },
+      { name: 'TypeScript', role: 'Robust Type Safety' }
+    ],
+    primaryColor: 'from-rose-700 via-red-800 to-amber-700',
+    accentColor: 'text-rose-400',
+    iconName: 'GraduationCap',
+    localDir: 'developer',
+    runCommand: 'npm run dev',
+    links: {
+      demo: 'https://queen-amina-ten.vercel.app/',
+      github: 'https://github.com/danlanre/queen-amina'
+    },
+    metrics: [
+      { label: 'Location', value: 'Kaduna, Nigeria' },
+      { label: 'Performance', value: '99/100 Lighthouse' },
+      { label: 'Availability', value: '100% Production' }
     ]
   }
 ];
 
 export const CATEGORIES = [
-  { id: 'all', label: 'All Projects', count: 11 },
+  { id: 'all', label: 'All Projects', count: 10 },
   { id: 'ai', label: 'AI & Machine Learning', count: 4 },
-  { id: 'fullstack', label: 'Full-Stack Platforms', count: 4 },
+  { id: 'fullstack', label: 'Full-Stack & Systems', count: 5 },
   { id: 'offline', label: 'Offline & PWA', count: 1 },
-  { id: 'tools-games', label: 'Tools & Game Dev', count: 2 },
 ] as const;
