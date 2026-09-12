@@ -7,12 +7,14 @@ import {
   Copy, 
   Check, 
   Sparkles,
-  CheckCircle2
+  CheckCircle2,
+  Phone
 } from 'lucide-react';
 import { DEVELOPER_INFO } from '../data/skills';
 
 export const ContactSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -25,6 +27,12 @@ export const ContactSection: React.FC = () => {
     navigator.clipboard.writeText(DEVELOPER_INFO.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPhone = (num: string) => {
+    navigator.clipboard.writeText(num);
+    setCopiedPhone(num);
+    setTimeout(() => setCopiedPhone(null), 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -81,6 +89,38 @@ export const ContactSection: React.FC = () => {
                 >
                   {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
+              </div>
+
+              {/* Phone & WhatsApp Card */}
+              <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-slate-400">Direct Phone & WhatsApp</div>
+                    <div className="text-[11px] text-slate-500 font-mono">Available for voice calls & WhatsApp</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  {DEVELOPER_INFO.phones.map((phone) => (
+                    <div key={phone} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-slate-900/90 border border-slate-800">
+                      <a
+                        href={`tel:${phone}`}
+                        className="text-xs font-semibold text-white font-mono hover:text-emerald-400 transition-colors"
+                      >
+                        {phone}
+                      </a>
+                      <button
+                        onClick={() => handleCopyPhone(phone)}
+                        className="p-1 rounded text-slate-400 hover:text-white transition-colors"
+                        title="Copy phone number"
+                      >
+                        {copiedPhone === phone ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* GitHub Card */}

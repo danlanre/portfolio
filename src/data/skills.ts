@@ -56,6 +56,8 @@ export const DEVELOPER_INFO = {
   role: 'Full-Stack & AI Systems Developer',
   location: 'Kaduna, Nigeria (Available Globally / Remote)',
   email: 'danlanre@gmail.com',
+  phones: ['08091118101', '08438808911'],
+  phoneDisplay: '08091118101, 08438808911',
   github: 'https://github.com/danlanre',
   bio: 'Systems-minded software engineer specializing in building intelligent, resilient web applications, autonomous AI guardrails, offline-first PWAs, and high-performance user experiences. Experienced across modern React/Next.js architectures, generative media engines, localized fintech solutions, and interactive graphics.',
   stats: [

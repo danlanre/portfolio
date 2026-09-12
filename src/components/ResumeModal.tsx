@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { X, Printer, Mail, MapPin, Github } from 'lucide-react';
+import { X, Printer, Mail, MapPin, Github, Phone } from 'lucide-react';
 import { DEVELOPER_INFO } from '../data/skills';
 import { PROJECTS } from '../data/projects';
 
@@ -79,6 +79,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="flex items-center gap-1">
                   <Mail className="w-3.5 h-3.5 text-cyan-400" />
                   {DEVELOPER_INFO.email}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                  <a href="tel:08091118101" className="hover:text-cyan-300">08091118101</a>
+                  <span>/</span>
+                  <a href="tel:08438808911" className="hover:text-cyan-300">08438808911</a>
                 </span>
                 <a href={DEVELOPER_INFO.github} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-cyan-300">
                   <Github className="w-3.5 h-3.5" />
