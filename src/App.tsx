@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
+import { ArchitectureSection } from './components/ArchitectureSection';
 import { SkillsSection } from './components/SkillsSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
@@ -66,6 +67,9 @@ export function App() {
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
         />
+
+        {/* Senior Architectural Deep-Dives */}
+        <ArchitectureSection />
 
         {/* Technical Skills Radar */}
         <SkillsSection />

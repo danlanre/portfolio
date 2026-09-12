@@ -27,6 +27,7 @@ export const Footer: React.FC = () => {
           {/* Nav Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400">
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+            <a href="#architecture" className="hover:text-white transition-colors">Architecture</a>
             <a href="#skills" className="hover:text-white transition-colors">Skills & Tech</a>
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>

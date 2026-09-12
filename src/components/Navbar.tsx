@@ -10,7 +10,8 @@ import {
   X, 
   Sun, 
   Moon, 
-  Sparkles
+  Sparkles,
+  GitBranch
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -33,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
 
   const navLinks = [
     { name: 'Projects', href: '#projects', icon: Layers },
+    { name: 'Architecture', href: '#architecture', icon: GitBranch },
     { name: 'Skills & Tech', href: '#skills', icon: Cpu },
     { name: 'About', href: '#about', icon: User },
     { name: 'Contact', href: '#contact', icon: Mail },
