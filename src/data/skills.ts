@@ -54,8 +54,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const DEVELOPER_INFO = {
   name: 'Dan Lanre',
   role: 'Full-Stack & AI Systems Developer',
-  location: 'Lagos, Nigeria (Available Globally / Remote)',
-  email: 'danlanre.dev@gmail.com',
+  location: 'Kaduna, Nigeria (Available Globally / Remote)',
+  email: 'danlanre@gmail.com',
   github: 'https://github.com/danlanre',
   bio: 'Systems-minded software engineer specializing in building intelligent, resilient web applications, autonomous AI guardrails, offline-first PWAs, and high-performance user experiences. Experienced across modern React/Next.js architectures, generative media engines, localized fintech solutions, and interactive graphics.',
   stats: [

@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProjects, onOpenResume }) =
             </span>
             <span>Available for Full-time Roles & High-Impact Contracts</span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-400 font-mono text-[11px] sm:text-xs">Lagos & Global Remote</span>
+            <span className="text-slate-400 font-mono text-[11px] sm:text-xs">Kaduna & Global Remote</span>
           </div>
 
           {/* Main Headline */}

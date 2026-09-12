@@ -25,7 +25,7 @@ export const AboutSection: React.FC = () => {
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            I am a full-stack engineer and AI systems developer based in Lagos, Nigeria, working globally. I specialize in designing and engineering software that performs flawlessly under demanding real-world conditions—from low-bandwidth African commerce to zero-latency generative video and enterprise agent security.
+            I am a full-stack engineer and AI systems developer based in Kaduna, Nigeria, working globally. I specialize in designing and engineering software that performs flawlessly under demanding real-world conditions—from low-bandwidth African commerce to zero-latency generative video and enterprise agent security.
           </p>
 
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">

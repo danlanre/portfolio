@@ -225,7 +225,7 @@ export const PROJECTS: Project[] = [
     localDir: 'developer',
     runCommand: 'npm run dev',
     links: {
-      demo: 'https://estatepayment-5z0runzcp-queen-amina.vercel.app/',
+      demo: 'https://estatepayment.vercel.app/',
       github: 'https://github.com/danlanre/Estatepayment'
     },
     metrics: [
@@ -268,7 +268,7 @@ export const PROJECTS: Project[] = [
     localDir: 'generating video app',
     runCommand: 'npm run dev',
     links: {
-      demo: 'https://pethealthscanner-1w7g4dh8t-queen-amina.vercel.app/',
+      demo: 'https://pethealthscanner-eight.vercel.app/',
       github: 'https://github.com/danlanre/pethealthscanner'
     },
     metrics: [
@@ -311,7 +311,7 @@ export const PROJECTS: Project[] = [
     localDir: 'developer',
     runCommand: 'npm run dev',
     links: {
-      demo: 'https://clusterdrop-g3qhdgm1r-queen-amina.vercel.app/',
+      demo: 'https://clusterdrop.vercel.app/',
       github: 'https://github.com/danlanre/clusterdrop'
     },
     metrics: [

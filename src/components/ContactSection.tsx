@@ -31,6 +31,7 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setFormSubmitted(true);
+    window.open(`mailto:${DEVELOPER_INFO.email}?subject=${encodeURIComponent(formData.subject + ' from ' + formData.name)}&body=${encodeURIComponent(formData.message + '\n\nSender: ' + formData.name + ' (' + formData.email + ')')}`, '_blank');
   };
 
   return (
@@ -68,7 +69,9 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[11px] text-slate-400">Direct Email</div>
-                    <div className="text-sm font-semibold text-white font-mono">{DEVELOPER_INFO.email}</div>
+                    <a href={`mailto:${DEVELOPER_INFO.email}`} className="text-sm font-semibold text-white font-mono hover:text-cyan-400 transition-colors">
+                      {DEVELOPER_INFO.email}
+                    </a>
                   </div>
                 </div>
                 <button
